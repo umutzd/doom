@@ -3,20 +3,12 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-(use-package! treesit-auto
-  :custom
-  (treesit-auto-install 'prompt)
-  :config
-  (treesit-auto-add-to-auto-mode-alist 'all)
-  (global-treesit-auto-mode))
-
 (use-package! lsp-tailwindcss
   :when (modulep! +lsp)
   :init
   (setq! lsp-tailwindcss-add-on-mode t)
   :config
   (add-to-list 'lsp-tailwindcss-major-modes 'astro-ts-mode))
-
 
 (use-package! project
   :init
@@ -28,6 +20,7 @@
                 (left . 100)
                 (width  . 229)
                 (height . 73))))
+
 (setq default-frame-alist initial-frame-alist)
 
 (add-hook 'after-doom-setup
@@ -47,8 +40,6 @@
 (add-hook 'after-make-frame-functions
           (lambda (frame)
             (set-frame-parameter frame 'vertical-scroll-bars nil)))
-
-(setq treesit-extra-load-path '("/Users/umutozdemir/.tree-sitter"))
 
 ;; ASTRO
 (define-derived-mode astro-mode web-mode "astro")
@@ -76,8 +67,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
-;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
+      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -87,7 +78,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-oceanic-next)
+(setq doom-theme 'doom-old-hope)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
