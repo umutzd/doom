@@ -8,9 +8,11 @@
 (package! treesit-auto)
 ;; (package! astro-ts-mode)
 
-(when (modulep! +lsp)
-  (package! lsp-tailwindcss
-    :recipe (:host github :repo "merrickluo/lsp-tailwindcss")))
+(package! lsp-tailwindcss :recipe (:host github :repo "merrickluo/lsp-tailwindcss"))
+
+;; (when (modulep! +lsp)
+;;   (package! lsp-tailwindcss
+;;     :recipe (:host github :repo "merrickluo/lsp-tailwindcss")))
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;; (package! some-package)

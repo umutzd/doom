@@ -3,13 +3,6 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-(use-package! lsp-tailwindcss
-  :when (modulep! +lsp)
-  :init
-  (setq! lsp-tailwindcss-add-on-mode t)
-  :config
-  (add-to-list 'lsp-tailwindcss-major-modes 'astro-ts-mode))
-
 (use-package! project
   :init
   (setq project-vc-extra-root-markers '(".package.json")))
@@ -46,6 +39,16 @@
 (setq auto-mode-alist
       (append '((".*\\.astro\\'" . astro-mode))
               auto-mode-alist))
+
+(use-package! lsp-tailwindcss
+  :init
+  (setq! lsp-tailwindcss-add-on-mode t))
+
+;; (use-package! lsp-tailwindcss
+;;   :init
+;;   (setq! lsp-tailwindcss-add-on-mode t)
+;;   :config
+;;   (add-to-list 'lsp-tailwindcss-major-modes 'astro-mode))
 
 ;; Avoids my accidental nukes of the program on macOS
 (global-set-key (kbd "s-w") nil)
